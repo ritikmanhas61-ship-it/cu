@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Karwa Chauth for my Shalini 🌕❤️</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            /* Shifting dynamic deep red and crimson colors */
+            background: linear-gradient(45deg, #4a000b, #700014, #9e0c25, #310005);
+            background-size: 400% 400%;
+            color: #fff8f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            animation: gradientShift 12s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Beautiful glowing moon with Shona written on it */
+        .moon {
+            position: absolute;
+            top: 6%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 140px;
+            background: radial-gradient(circle at 35% 35%, #ffffff, #fff5d6 50%, #fce295 90%);
+            border-radius: 50%;
+            box-shadow: 0 0 90px 30px rgba(253, 218, 118, 0.5);
+            z-index: 1;
+            opacity: 0.95;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .moon::after {
+            content: "shona";
+            font-family: 'Georgia', serif;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #4a2c00;
+            opacity: 0.7;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+        }
+
+        /* Continuous Love Float System */
+        .floating {
+            position: absolute;
+            font-size: 2.2rem;
+            pointer-events: none;
+            z-index: 1;
+            will-change: transform, opacity;
+            animation: floatUp 8s infinite linear;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(105vh) rotate(0deg); opacity: 0; }
+            15% { opacity: 0.95; }
+            90% { opacity: 0.95; }
+            100% { transform: translateY(-15vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Sparkle Burst */
+        .sparkle-particle {
+            position: absolute;
+            pointer-events: none;
+            font-size: 1.6rem;
+            z-index: 9999;
+            will-change: transform, opacity;
+            animation: burst 0.8s ease-out forwards;
+        }
+
+        @keyframes burst {
+            0% { transform: translate(-50%, -50%) scale(0.4); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1.2) translate(var(--mx), var(--my)); opacity: 0; }
+        }
+
+        .message-container {
+            max-width: 850px;
+            z-index: 2;
+            text-shadow: 2px 2px 14px rgba(0,0,0,0.7);
+            font-weight: 400;
+            margin-bottom: 35px;
+        }
+
+        .main-message {
+            font-size: 1.95rem;
+            line-height: 1.7;
+            animation: fadeInText 0.8s ease-out;
+        }
+
+        .final-message {
+            display: none;
+            font-size: 1.95rem;
+            line-height: 1.7;
+            animation: fadeInText 0.8s ease-out;
+        }
+
+        @keyframes fadeInText {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        button {
+            font-size: 1.6rem;
+            padding: 12px 45px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            font-weight: 600;
+        }
+
+        .next-btn {
+            background: linear-gradient(135deg, #ff4d6d, #ff758f);
+            color: white;
+        }
+
+        .next-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(255, 77, 109, 0.6);
+        }
+
+        .back-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            display: none;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        .nickname-badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 4px 15px;
+            border-radius: 15px;
+            font-size: 1.6rem;
+            display: inline-block;
+            margin: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff3cc;
+        }
+
+        audio { display: none; }
+    </style>
+</head>
+<body>
+
+    <!-- Audio Element -->
+    <audio id="bgMusic" loop>
+        <source src="https://soundhelix.com" type="audio/mpeg">
+    </audio>
+
+    <div class="moon" id="moonNode"></div>
+
+    <div class="message-container">
+        <!-- Page 1 Content -->
+        <div class="main-message" id="mainMessage">
+            My cutu shona, first of all, you are more beautiful than any moon that has ever existed… The moon in the sky is not even an inch of your beauty. You completely outshine everything around you, and looking at you is a constant reminder of how incredibly perfect you are. ❤️❤️<br><br>
+            Happy Karwachauth to my jaan! ❤️❤️<br><br>
+            Today, while you are keeping this fast for me… ❤️❤️<br>
+            I just want you to know how full my heart feels. ❤️❤️<br><br>
+            I feel so blessed to have you in my life. ❤️❤️<br>
+            Out of so many people in this world, you chose me… ❤️❤️<br>
+            and that still feels unreal sometimes. ❤️❤️<br><br>
+            You are my peace, my home, and my favourite person. ❤️❤️<br>
+            The way you love, the way you care, the way you silently pray for me… ❤️❤️<br>
+            it touches me more than I can ever explain. ❤️❤️
+        </div>
+
+        <!-- Page 2 Content (Continuous Text Flows Directly Here) -->
+        <div class="final-message" id="finalMessage">
+            You have made my life softer, warmer, and so much more beautiful. ❤️❤️<br>
+            No one has ever loved me the way you do. ❤️❤️<br>
+            You feel like the purest soul I have ever known. ❤️❤️<br><br>
+            Thank you for every prayer, every sacrifice, and every quiet wish you make for me. ❤️❤️<br>
+            I don’t take any of it for granted. ❤️❤️<br><br>
+            I am the luckiest person alive to have you by my side. ❤️❤️<br>
+            You are truly my absolute everything. ❤️❤️<br>
+            You have changed my life in the most beautiful way imaginable. ❤️❤️<br>
+            No one can ever love me the way you do. ❤️❤️<br>
+            You are the purest soul… a true goddess in my life. ❤️❤️<br><br>
+            I love you more than words will ever be enough to say. ❤️❤️<br>
+            Thank you for being mine forever and ever. ❤️❤️<br><br>
+            
+            <!-- Nickname Section Properly Formatted -->
+            <div style="margin-top: 25px;">
+                <span class="nickname-badge">my cutu</span>
+                <span class="nickname-badge">my shona</span>
+                <span class="nickname-badge">my chokru</span>
+                <span class="nickname-badge">my dove</span>
+                <span class="nickname-badge">my butterfly</span>
+                <span class="nickname-badge">my queen</span>
+                <span class="nickname-badge">my love</span>
+                <span class="nickname-badge">my baby</span>
+                <span class="nickname-badge">my putru</span>
+                <span class="nickname-badge">my ladu</span>
+                <span class="nickname-badge">my jaan</span>
+                <span class="nickname-badge">my angel</span>
+                <span class="nickname-badge">my goddess</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button class="back-btn" id="backBtn">⬅️ Back Page</button>
+        <button class="next-btn" id="nextBtn">Next Part ❤️</button>
+    </div>
+
+    <script>
+        const floatingContainer = document.body;
+        
+        /* 100% Love-Only Emojis and Rose Array */
+        const loveEmojis = ['❤️', '💖', '💝', '💕', '💘', '💗', '💓'];
+        const roseEmojis = ['🌹', '🌹', '🌹', '❤️', '💖', '🌹'];
+        const clickSparkles = ['✨', '💖', '❤️', '🌹'];
+
+        let currentActiveElements = [];
+
+        function clearFloatingElements() {
+            currentActiveElements.forEach(el => el.remove());
+            currentActiveElements = [];
+        }
+
+        function createFloatingElements(count, sourceArray) {
+            const fragment = document.createDocumentFragment();
+            for (let i = 0; i < count; i++) {
+                const el = document.createElement('div');
+                el.className = 'floating';
+                el.textContent = sourceArray[Math.floor(Math.random() * sourceArray.length)];
+                el.style.left = (Math.random() * 95) + 'vw';
+                el.style.animationDuration = (Math.random() * 4 + 5) + 's';
+                el.style.animationDelay = (Math.random() * 5) + 's';
+                fragment.appendChild(el);
+                currentActiveElements.push(el);
+            }
+            floatingContainer.appendChild(fragment);
+        }
+
+        // Init Love Emojis
+        createFloatingElements(40, loveEmojis);
+
+        // Interactive Sparkle Bursts On Tap
